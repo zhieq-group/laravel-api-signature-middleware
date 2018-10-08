@@ -1,10 +1,10 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 
-class AcceptTypeInvalidException extends Exception
+class RequestTimeInvalidException extends Exception
 {
 
     /**
@@ -14,7 +14,7 @@ class AcceptTypeInvalidException extends Exception
      */
     protected function errorCode()
     {
-        return 41202;
+        return 41204;
     }
 
     /**
@@ -24,7 +24,7 @@ class AcceptTypeInvalidException extends Exception
      */
     protected function message()
     {
-        return 'Header Accept Only Support "application/json"';
+        return 'Header X-Ca-Timestamp Must Between Server Time +-15 Minutes';
     }
 
     /**

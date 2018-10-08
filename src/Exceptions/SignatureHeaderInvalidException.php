@@ -1,11 +1,18 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 
-class RequestContentTypeInvalidException extends Exception
+class SignatureHeaderInvalidException extends Exception
 {
+    protected $header;
+
+    public function __construct($header)
+    {
+        $this->header = $header;
+        parent::__construct();
+    }
 
     /**
      * 唯一错误代码5位数字，不能以零开头
@@ -14,7 +21,7 @@ class RequestContentTypeInvalidException extends Exception
      */
     protected function errorCode()
     {
-        return 41203;
+        return 41207;
     }
 
     /**
@@ -24,7 +31,7 @@ class RequestContentTypeInvalidException extends Exception
      */
     protected function message()
     {
-        return 'Header Content-Type Only Support "application/json"';
+        return 'Header ' . $this->header . ' Required';
     }
 
     /**

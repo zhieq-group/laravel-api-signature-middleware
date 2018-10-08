@@ -1,10 +1,10 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 
-class RepeatRequestException extends Exception
+class HeaderNonceLengthInvalidException extends Exception
 {
 
     /**
@@ -14,7 +14,7 @@ class RepeatRequestException extends Exception
      */
     protected function errorCode()
     {
-        return 41206;
+        return 41208;
     }
 
     /**
@@ -24,7 +24,7 @@ class RepeatRequestException extends Exception
      */
     protected function message()
     {
-        return 'Request Has Handle';
+        return 'Header X-Ca-Nonce Length Must Be 40 byte';
     }
 
     /**

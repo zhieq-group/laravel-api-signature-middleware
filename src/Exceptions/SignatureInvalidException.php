@@ -1,6 +1,6 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 

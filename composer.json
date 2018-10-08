@@ -17,9 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ZhiEq\\Middleware\\": "src/Middleware",
-      "ZhiEq\\Exceptions\\": "src/Exceptions",
-      "ZhiEq\\GuzzleMiddleware\\": "src/GuzzleMiddleware"
+      "ZhiEq\\ApiSignature\\": "src"
     }
   }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 
-class HeaderNonceLengthInvalidException extends Exception
+class BodyFormatInvalidException extends Exception
 {
 
     /**
@@ -14,7 +14,7 @@ class HeaderNonceLengthInvalidException extends Exception
      */
     protected function errorCode()
     {
-        return 41208;
+        return 41501;
     }
 
     /**
@@ -24,7 +24,7 @@ class HeaderNonceLengthInvalidException extends Exception
      */
     protected function message()
     {
-        return 'Header X-Ca-Nonce Length Must Be 40 byte';
+        return 'Http Body Must Be Json Format';
     }
 
     /**
@@ -44,7 +44,7 @@ class HeaderNonceLengthInvalidException extends Exception
      */
     protected function statusCode()
     {
-        return 412;
+        return 415;
     }
 
     /**

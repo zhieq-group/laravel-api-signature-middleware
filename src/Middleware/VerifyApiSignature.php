@@ -1,21 +1,21 @@
 <?php
 
-namespace ZhiEq\Middleware;
+namespace ZhiEq\ApiSignature\Middleware;
 
 use Carbon\Carbon;
 use Closure;
 use Exception;
 use Illuminate\Http\Request;
 use ZhiEq\Contracts\MiddlewareExceptRoute;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\AcceptTypeInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\BodyFormatInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\HeaderNonceLengthInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\RepeatRequestException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\RequestContentTypeInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\RequestTimeInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\SignatureHeaderInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\SignatureInvalidException;
-use ZhiEq\Exceptions\ApiSignatureMiddleware\TimestampFormatInvalidException;
+use ZhiEq\ApiSignature\Exceptions\AcceptTypeInvalidException;
+use ZhiEq\ApiSignature\Exceptions\BodyFormatInvalidException;
+use ZhiEq\ApiSignature\Exceptions\HeaderNonceLengthInvalidException;
+use ZhiEq\ApiSignature\Exceptions\RepeatRequestException;
+use ZhiEq\ApiSignature\Exceptions\RequestContentTypeInvalidException;
+use ZhiEq\ApiSignature\Exceptions\RequestTimeInvalidException;
+use ZhiEq\ApiSignature\Exceptions\SignatureHeaderInvalidException;
+use ZhiEq\ApiSignature\Exceptions\SignatureInvalidException;
+use ZhiEq\ApiSignature\Exceptions\TimestampFormatInvalidException;
 
 class VerifyApiSignature extends MiddlewareExceptRoute
 {

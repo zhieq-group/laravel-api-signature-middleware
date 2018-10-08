@@ -1,10 +1,10 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 
-class RequestTimeInvalidException extends Exception
+class RepeatRequestException extends Exception
 {
 
     /**
@@ -14,7 +14,7 @@ class RequestTimeInvalidException extends Exception
      */
     protected function errorCode()
     {
-        return 41204;
+        return 41206;
     }
 
     /**
@@ -24,7 +24,7 @@ class RequestTimeInvalidException extends Exception
      */
     protected function message()
     {
-        return 'Header X-Ca-Timestamp Must Between Server Time +-15 Minutes';
+        return 'Request Has Handle';
     }
 
     /**

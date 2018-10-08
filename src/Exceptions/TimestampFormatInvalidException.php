@@ -1,10 +1,10 @@
 <?php
 
-namespace ZhiEq\Exceptions\ApiSignatureMiddleware;
+namespace ZhiEq\ApiSignature\Exceptions;
 
 use ZhiEq\Contracts\Exception;
 
-class BodyFormatInvalidException extends Exception
+class TimestampFormatInvalidException extends Exception
 {
 
     /**
@@ -14,7 +14,7 @@ class BodyFormatInvalidException extends Exception
      */
     protected function errorCode()
     {
-        return 41501;
+        return 41205;
     }
 
     /**
@@ -24,7 +24,7 @@ class BodyFormatInvalidException extends Exception
      */
     protected function message()
     {
-        return 'Http Body Must Be Json Format';
+        return 'X-Ca-Timestamp Format Must Be Like "2017-01-01T00:00:00Z" By UTC Timezone';
     }
 
     /**
@@ -44,7 +44,7 @@ class BodyFormatInvalidException extends Exception
      */
     protected function statusCode()
     {
-        return 415;
+        return 412;
     }
 
     /**
