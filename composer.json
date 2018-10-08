@@ -1,0 +1,25 @@
+{
+  "name": "zhieq/laravel-api-signature-middleware",
+  "description": "zhieq group laravel api signature middleware",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zhieq",
+      "email": "developer@zhieq.com"
+    }
+  ],
+  "require": {
+    "laravel/framework": "5.*",
+    "zhieq/laravel-contracts": "^1.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "zhieq/laravel-supports": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ZhiEq\\Middleware\\": "src/Middleware",
+      "ZhiEq\\Exceptions\\": "src/Exceptions",
+      "ZhiEq\\GuzzleMiddleware\\": "src/GuzzleMiddleware"
+    }
+  }
+}
