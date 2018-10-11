@@ -40,7 +40,7 @@ class VerifyApiSignature extends MiddlewareExceptRoute
 
     protected function getContentEncode($request)
     {
-        if (env('APP_ENV') === 'testing' && ($request->getMethod() === 'GET' || $request->getMethod() === 'DELETE')) {
+        if (in_array($request->getMethod(), ['GET', 'DELETE'])) {
             return '';
         }
         return (empty($request->getContent()) ? '' : base64_encode(md5($request->getContent(), true)));
