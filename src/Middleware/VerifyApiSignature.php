@@ -58,14 +58,14 @@ class VerifyApiSignature extends MiddlewareExceptRoute
         /*
         * 强制检查传入的body必须为json格式
         */
-        if (!$request->isJson()) {
-            throw new RequestContentTypeInvalidException();
-        }
         if (!$request->wantsJson()) {
             throw new AcceptTypeInvalidException();
         }
         if (!empty($request->getContent()) && empty($request->json())) {
             throw new BodyFormatInvalidException();
+        }
+        if (!empty($request->getContent()) && !$request->isJson()) {
+            throw new RequestContentTypeInvalidException();
         }
         /*
          * 检查签名必须的字段
