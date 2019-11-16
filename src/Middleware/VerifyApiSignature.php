@@ -87,6 +87,7 @@ class VerifyApiSignature extends MiddlewareExceptRoute
                 throw new RequestTimeInvalidException();
             }
         } catch (Exception $exception) {
+            logs()->error($exception->__toString());
             throw new TimestampFormatInvalidException();
         }
         /*
