@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "laravel/framework": "5.*",
+    "laravel/framework": "*",
     "zhieq/laravel-contracts": "^1.0",
     "guzzlehttp/guzzle": "^6.3",
     "zhieq/laravel-supports": "^1.0"
