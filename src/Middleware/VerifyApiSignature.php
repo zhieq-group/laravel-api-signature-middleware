@@ -93,7 +93,7 @@ class VerifyApiSignature extends MiddlewareExceptRoute
         /*
          * 根据请求的路径和请求的随机数进行校验，保证在15分钟内只能请求一次，结合上述时间校验防止回放攻击
          */
-        $uniqueRequestStr = sha1('/' . $request->path() . "\n" . $request->header('X-Ca-Nonce'));
+        $uniqueRequestStr = config('tools.api_signature_prefix') . sha1('/' . $request->path() . "\n" . $request->header('X-Ca-Nonce'));
         if (cache()->get($uniqueRequestStr)) {
             throw new RepeatRequestException();
         }
